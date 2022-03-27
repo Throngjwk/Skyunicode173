@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>AD Save Bank</title>
-        <meta name="title" content="AD Save Bank">
-        <meta name="description" content="Save files for Antimatter Dimensions">
+        <meta name="title" content="Ex Save viewer">
+        <meta name="description" content="Save files for Exponential idle">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheets/core.css">
@@ -31,7 +31,7 @@
                     <ul class="nav-ul">
                         <li v-for="(tab, i) in tabs" :key="i">
                             <button v-if="i < saves.length"
-                                    :class="[{'is-active': currentTab === tab}, saves[i].color]"
+                                    :class="[{'is-active': currentTab === tab}, saves["
                                     @click="setHash(tab)">
                                 {{tab}} ({{(saves[i].saves || []).length}})
                             </button>
