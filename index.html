@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <p id="head">Clicker</p>
+    <p id="number">You have $0</p>
+    <button type="button" onlick=increase()>Click!</button>
+    <script>
+    var money;
+    money = new currency(0);
+    function currency(value) {
+        this.value = value;
+    }
+    function increase () {
+        money.value += 1;
+        tick();
+    }
+    function tick () {
+      document.getElecmentById("number").innerHTML = "You have $" + money.value;
+    }
+    </script>
+  </body>
+</html>
+
+      
+      
