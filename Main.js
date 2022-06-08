@@ -21,12 +21,24 @@ function pointGain(a) {
 
 function tick() {
   let getInv = () => updateINV / 1000;
-  PointGain(getInv);
+  pointGain(getInv);
   let point = Game.point;
   let pointUpdate = document.getElementById("point");
   
   pointUpdate.innerHTML = "You have $" + Game.point;
-  
+  SaveGame();
+}
+
+
+function SaveGame() {
+  localStorage.removeItem("point");
+  localStorage.removeItem("autoAdd");
+  localStorage.setItem("point", Game.point);
+  localStorage.setItem("autoAdd", Game.autoAdd);
+}
+function LoadGame() {
+  Game.point = localStorage.getItem("point");
+  Game.autoAdd = localStorage.getItem("autoAdd");
 }
 
 // update event
@@ -35,4 +47,5 @@ function setWindowEvent() {
   if (UpdateInterval != null) window.clearInterval(UpdateInterval);
   UpdateInterval = window.setInterval(tick, updateINV); // call tick() every updateINV(40) ms
 }
+LoadGame();
 setWindowEvent();
