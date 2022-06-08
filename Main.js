@@ -21,7 +21,7 @@ function pointGain(a) {
 
 function tick() {
   let getInv = () => updateINV / 1000;
-  pointGain(getInv);
+  pointGain(getInv());
   let point = Game.point;
   let pointUpdate = document.getElementById("point");
   
