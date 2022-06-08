@@ -28,7 +28,10 @@ function tick() {
   pointUpdate.innerHTML = "You have $" + Game.point;
   SaveGame();
 }
-
+function WIPE() {
+  Game = null;
+  Game = new variable();
+}
 
 function SaveGame() {
   localStorage.removeItem("point");
