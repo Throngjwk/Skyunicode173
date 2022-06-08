@@ -15,11 +15,16 @@ function TapIncrease () {
   Game.point += 1;
 }
 
+function pointGain(a) {
+  Game.point += Game.autoAdd * a;
+}
 
 function tick() {
+  let getInv = () => updateINV / 1000;
+  PointGain(getInv);
   let point = Game.point;
   let pointUpdate = document.getElementById("point");
-  let getInv = () => 1000 / updateINV;
+  
   pointUpdate.innerHTML = "You have $" + Game.point;
   
 }
