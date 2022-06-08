@@ -39,6 +39,8 @@ function SaveGame() {
 function LoadGame() {
   Game.point = localStorage.getItem("point");
   Game.autoAdd = localStorage.getItem("autoAdd");
+  if (Game.point == NaN) Game.point = 0;
+  if (Game.autoAdd == null) Game.autoAdd = 0;
 }
 
 // update event
