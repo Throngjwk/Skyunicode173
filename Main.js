@@ -38,12 +38,14 @@ function SaveGame() {
   localStorage.removeItem("autoAdd");
   localStorage.setItem("point", Game.point);
   localStorage.setItem("autoAdd", Game.autoAdd);
+  if (localStorage.getItem("point") == NaN) { localStorage.removeItem("point"); localStorage.setItem("point", 0); }
 }
 function LoadGame() {
   Game.point = localStorage.getItem("point");
   Game.autoAdd = localStorage.getItem("autoAdd");
   if (Game.point == NaN) Game.point = 0;
   if (Game.autoAdd == null) Game.autoAdd = 0;
+  SaveGame();
 }
 
 // update event
