@@ -41,8 +41,8 @@ function SaveGame() {
 }
 function LoadGame() {
   let String = localStorage.getItem("Main").split(" ");
-  if (String.length > 0) Game.point = String[0];
-  if (String.length > 1) Game.autoAdd = String[1];
+  if (String.length > 0) Game.point = Number(String[0]);
+  if (String.length > 1) Game.autoAdd = Number(String[1]);
   SaveGame();
 }
 
