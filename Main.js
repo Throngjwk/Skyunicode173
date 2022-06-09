@@ -31,20 +31,18 @@ function tick() {
 function WIPE() {
   Game = null;
   Game = new variable();
+  SaveGame();
 }
 
 function SaveGame() {
-  localStorage.removeItem("point");
-  localStorage.removeItem("autoAdd");
-  localStorage.setItem("point", Game.point);
-  localStorage.setItem("autoAdd", Game.autoAdd);
-  if (localStorage.getItem("point") == NaN) { localStorage.removeItem("point"); localStorage.setItem("point", 0); }
+  localStorage.removeItem("Main");
+  let save = `${Game.point} ${Game.autoAdd}`;
+  localStorage.setItem("Main", save);
 }
 function LoadGame() {
-  Game.point = localStorage.getItem("point");
-  Game.autoAdd = localStorage.getItem("autoAdd");
-  if (Game.point == NaN) Game.point = 0;
-  if (Game.autoAdd == null) Game.autoAdd = 0;
+  let String = localStorage.getItem("Main").split(" ");
+  if (String.length > 0) Game.point = String[0];
+  if (String.length > 1) Game.autoAdd = String[1];
   SaveGame();
 }
 
