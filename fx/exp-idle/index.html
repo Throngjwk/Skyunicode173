@@ -13,7 +13,7 @@
     <h3>\( x_n \) unlocked</h3>
     <p>$$ \begin{matrix} f(t+dt)=f(t) \times e^{bx_{8}dt} \\ x_i \leftarrow x_i  + x_{i-1} dt \\ x_0 = x \end{matrix} $$</p>
 
-    <h3>\( \varhpi \) unlocked (mid game)</h3>
+    <h3>\( \varphi \) unlocked (mid game)</h3>
     <p>$$ \begin{matrix} f(t+dt)=f(t) \times e^{bx_{8} \varphi dt} \\ x_i \leftarrow x_i  + x_{i-1} dt \\ x_0 = x \end{matrix} $$</p>
 
     <h3>\( \tau \) unlocked (late game)</h3>
@@ -23,5 +23,14 @@
 
     <h3>Main</h3>
     <p> $$ \varphi = \prod_{i} \varphi_i $$</p>
+    
+    <h3>all \( \varphi \) upgrades</h3>
+    <p>$$ \varphi_1 = dt^{10} $$</p>
+    <p>$$ \varphi_2 = (1+t)^{10 \times 0.7} $$</p>
+    <p>$$ \varphi_3 = (1+ \star)^{10} $$</p>
+    <p>$$ \varphi_4 = (1+db)^{ 8 / \sqrt{100 \log_{10}(10+db)} } $$</p>
+    <p>$$ \varphi_5 = (1+d \mu)^{8 / 1300} $$</p>
+    <p>$$ \varphi_6 = (1+d \psi)^{ \frac{8}{225} \times \sqrt{\log_{10}(10+d \psi)} } $$</p>
+    <p>$$ \uparrow \varphi \text{exponential by} 0.1 $$</p>
   </body>
 </html>
